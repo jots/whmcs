@@ -183,6 +183,21 @@ module WHMCS
       send_request(params)
     end
 
+    # Apply credit
+    #
+    # Parameters:
+    #
+    # * <tt>:invoiceid</tt> - Required invoice id
+    # * <tt>:amount</tt> - Amount of credit to apply (must be less than or equal to available credit balance)
+    #
+    # See:
+    #
+    # http://docs.whmcs.com/API:Apply_Credit
+    def self.apply_credit(params = {})
+      params.merge!(:action => 'applycredit')
+      send_request(params)
+    end
+
     # Get configured payment methods
     #
     # See:
