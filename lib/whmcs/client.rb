@@ -322,5 +322,20 @@ module WHMCS
       params.merge!(:action => 'sendemail')
       send_request(params)
     end
+
+    # Get credits
+    #
+    # Parameters:
+    #
+    # * <tt>:clientid</tt> - required clientid 
+    #
+    # See:
+    #
+    # http://docs.whmcs.com/API:Get_Credits
+    def self.get_credits(params = {})
+      params.merge!(:action => 'getcredits')
+      send_request(params)
+    end
+
   end
 end
