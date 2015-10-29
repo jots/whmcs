@@ -30,6 +30,7 @@ module WHMCS
 
       if url.port == 443
         http.use_ssl = true
+        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       end
 
       req = Net::HTTP::Post.new(url.path)
