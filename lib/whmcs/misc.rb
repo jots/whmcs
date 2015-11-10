@@ -2,6 +2,11 @@ module WHMCS
   # The WHMCS::Misc class contains miscelaneous WHMCS API functions
   class Misc < Base
 
+    def self.send_email(params = {})
+      params.merge!(:action => 'sendemail')
+      send_request(params)
+    end
+
     # Perform a whois lookup for a domain name
     #
     # Parameters:
