@@ -37,6 +37,11 @@ module WHMCS
       send_request(params)
     end
 
+    # https://developers.whmcs.com/api-reference/closeclient/
+    def self.close_client(params = {})
+      params.merge!(:action => 'CloseClient')
+      send_request(params)
+    end
     # Update a client's info
     #
     # Parameters:
